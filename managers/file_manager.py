@@ -1,4 +1,5 @@
 import json
+from models.car import Car
 
 
 class FileManager:
@@ -22,3 +23,28 @@ class FileManager:
             json.dump(data, file, indent=4)
 
         print("Cars saved successfully")
+
+    @staticmethod
+    def load_cars():
+
+        cars = []
+
+        with open("data/cars.json", "r") as file:
+
+            data = json.load(file)
+
+            for item in data:
+
+                car = Car(
+                    item["car_id"],
+                    item["brand"],
+                    item["model"],
+                    item["year"],
+                    item["price_per_day"]
+                )
+
+                car.is_available = item["is_available"]
+
+                cars.append(car)
+
+        return cars
