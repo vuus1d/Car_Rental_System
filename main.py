@@ -13,10 +13,17 @@ def main():
     manager.add_car(car1)
     manager.add_client(client1)
 
+    print("=== BEFORE RENT ===")
     manager.show_cars()
 
     manager.rent_car(1, "Nurasyl", 3)
 
+    print("\n=== AFTER RENT ===")
+    manager.show_cars()
+
+    manager.return_car(1)
+
+    print("\n=== AFTER RETURN ===")
     manager.show_cars()
 
 

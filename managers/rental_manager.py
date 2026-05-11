@@ -44,3 +44,19 @@ class RentalManager:
                 return
 
         print("Car not found")
+
+    def return_car(self, car_id):
+        for booking in self.bookings:
+
+            if booking.car_id == car_id and booking.is_active:
+
+                booking.complete()
+
+                for car in self.cars:
+                    if car.car_id == car_id:
+                        car.return_car()
+
+                        print("Car returned successfully")
+                        return
+
+        print("Active booking not found")
