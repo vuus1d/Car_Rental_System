@@ -1,30 +1,26 @@
 from models.car import Car
 from models.client import Client
 from managers.rental_manager import RentalManager
+from managers.file_manager import FileManager
 
 
 def main():
+
     manager = RentalManager()
 
     car1 = Car(1, "Toyota", "Camry", 2020, 50)
+    car2 = Car(2, "BMW", "X5", 2022, 120)
 
     client1 = Client("Nurasyl")
 
     manager.add_car(car1)
+    manager.add_car(car2)
+
     manager.add_client(client1)
 
-    print("=== BEFORE RENT ===")
     manager.show_cars()
 
-    manager.rent_car(1, "Nurasyl", 3)
-
-    print("\n=== AFTER RENT ===")
-    manager.show_cars()
-
-    manager.return_car(1)
-
-    print("\n=== AFTER RETURN ===")
-    manager.show_cars()
+    FileManager.save_cars(manager.cars)
 
 
 if __name__ == "__main__":
