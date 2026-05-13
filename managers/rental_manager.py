@@ -60,3 +60,21 @@ class RentalManager:
                         return
 
         print("Active booking not found")
+    def show_statistics(self):
+
+        total_cars = len(self.cars)
+
+        available_cars = 0
+        rented_cars = 0
+
+        for car in self.cars:
+
+            if car.is_available:
+                available_cars += 1
+            else:
+                rented_cars += 1
+
+        print("\n=== Statistics ===")
+        print(f"Total cars: {total_cars}")
+        print(f"Available cars: {available_cars}")
+        print(f"Rented cars: {rented_cars}")

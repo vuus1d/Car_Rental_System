@@ -14,7 +14,8 @@ def main():
         print("1. Show cars")
         print("2. Rent car")
         print("3. Return car")
-        print("4. Exit")
+        print("4. Show statistics")
+        print("5. Exit")
 
         choice = input("Choose an option: ")
 
@@ -41,6 +42,10 @@ def main():
             FileManager.save_cars(manager.cars)
 
         elif choice == "4":
+
+            manager.show_statistics()
+
+        elif choice == "5":
 
             print("Goodbye!")
             break
