@@ -13,7 +13,8 @@ def main():
         print("\n=== Car Rental System ===")
         print("1. Show cars")
         print("2. Rent car")
-        print("3. Exit")
+        print("3. Return car")
+        print("4. Exit")
 
         choice = input("Choose an option: ")
 
@@ -32,6 +33,14 @@ def main():
             FileManager.save_cars(manager.cars)
 
         elif choice == "3":
+
+            car_id = int(input("Enter car ID to return: "))
+
+            manager.return_car(car_id)
+
+            FileManager.save_cars(manager.cars)
+
+        elif choice == "4":
 
             print("Goodbye!")
             break
