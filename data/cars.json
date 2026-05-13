@@ -5,7 +5,7 @@
         "model": "Camry",
         "year": 2020,
         "price_per_day": 50,
-        "is_available": true
+        "is_available": false
     },
     {
         "car_id": 2,

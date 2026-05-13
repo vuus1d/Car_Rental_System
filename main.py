@@ -1,24 +1,37 @@
 from managers.file_manager import FileManager
+from managers.rental_manager import RentalManager
 
 
 def main():
 
-    cars = FileManager.load_cars()
+    manager = RentalManager()
+
+    manager.cars = FileManager.load_cars()
 
     while True:
 
         print("\n=== Car Rental System ===")
         print("1. Show cars")
-        print("2. Exit")
+        print("2. Rent car")
+        print("3. Exit")
 
         choice = input("Choose an option: ")
 
         if choice == "1":
 
-            for car in cars:
-                print(car)
+            manager.show_cars()
 
         elif choice == "2":
+
+            car_id = int(input("Enter car ID: "))
+            client_name = input("Enter your name: ")
+            days = int(input("Enter number of days: "))
+
+            manager.rent_car(car_id, client_name, days)
+
+            FileManager.save_cars(manager.cars)
+
+        elif choice == "3":
 
             print("Goodbye!")
             break
