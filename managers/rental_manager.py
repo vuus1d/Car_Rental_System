@@ -1,5 +1,6 @@
 from models.car import Car
 from models.client import Client
+from decorators import log_action
 from models.booking import Booking
 
 
@@ -15,10 +16,12 @@ class RentalManager:
     def add_client(self, client):
         self.clients.append(client)
 
+    @log_action
     def show_cars(self):
         for car in self.cars:
             print(car)
 
+    @log_action
     def rent_car(self, car_id, client_name, days):
         for car in self.cars:
             if car.car_id == car_id:
@@ -45,6 +48,7 @@ class RentalManager:
 
         print("Car not found")
 
+    @log_action
     def return_car(self, car_id):
         for booking in self.bookings:
 
