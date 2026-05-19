@@ -21,6 +21,10 @@ class RentalManager:
 
         print("\n========== CAR LIST ==========")
 
+        if not self.cars:
+            print("No cars available")
+            return
+
         for car in self.cars:
 
             status = "Available"
@@ -99,3 +103,4 @@ class RentalManager:
         print(f"Total cars: {total_cars}")
         print(f"Available cars: {available_cars}")
         print(f"Rented cars: {rented_cars}")
+        print("==============================")
