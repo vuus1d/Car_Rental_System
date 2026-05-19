@@ -10,7 +10,9 @@ def main():
 
     while True:
 
-        print("\n=== Car Rental System ===")
+        print("\n===================================")
+        print("      CAR RENTAL SYSTEM")
+        print("===================================")
         print("1. Show cars")
         print("2. Rent car")
         print("3. Return car")

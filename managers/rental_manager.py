@@ -18,8 +18,25 @@ class RentalManager:
 
     @log_action
     def show_cars(self):
+
+        print("\n========== CAR LIST ==========")
+
         for car in self.cars:
-            print(car)
+
+            status = "Available"
+
+            if not car.is_available:
+                status = "Rented"
+
+            print(
+                f"ID: {car.car_id} | "
+                f"{car.brand} {car.model} | "
+                f"Year: {car.year} | "
+                f"Price per day: ${car.price_per_day} | "
+                f"Status: {status}"
+            )
+
+        print("================================")
 
     @log_action
     def rent_car(self, car_id, client_name, days):
