@@ -25,21 +25,33 @@ def main():
 
         elif choice == "2":
 
-            car_id = int(input("Enter car ID: "))
-            client_name = input("Enter your name: ")
-            days = int(input("Enter number of days: "))
+            try:
 
-            manager.rent_car(car_id, client_name, days)
+                car_id = int(input("Enter car ID: "))
+                client_name = input("Enter your name: ")
+                days = int(input("Enter number of days: "))
 
-            FileManager.save_cars(manager.cars)
+                manager.rent_car(car_id, client_name, days)
+
+                FileManager.save_cars(manager.cars)
+
+            except ValueError:
+
+                print("Invalid input. Please enter numbers correctly.")
 
         elif choice == "3":
 
-            car_id = int(input("Enter car ID to return: "))
+            try:
 
-            manager.return_car(car_id)
+                car_id = int(input("Enter car ID to return: "))
 
-            FileManager.save_cars(manager.cars)
+                manager.return_car(car_id)
+
+                FileManager.save_cars(manager.cars)
+
+            except ValueError:
+
+                print("Invalid car ID.")
 
         elif choice == "4":
 
