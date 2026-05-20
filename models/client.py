@@ -1,10 +1,14 @@
-class Client:
+from models.person import Person
+
+
+class Client(Person):
+
     def __init__(self, name):
-        self.name = name
+
+        super().__init__(name)
+
         self.rental_history = []
 
     def add_booking(self, booking):
-        self.rental_history.append(booking)
 
-    def __str__(self):
-        return f"Client: {self.name}"
+        self.rental_history.append(booking)
