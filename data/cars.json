@@ -13,6 +13,38 @@
         "model": "X5",
         "year": 2022,
         "price_per_day": 120,
-        "is_available": false
+        "is_available": true
+    },
+    {
+        "car_id": 3,
+        "brand": "Mercedes",
+        "model": "C200",
+        "year": 2021,
+        "price_per_day": 100,
+        "is_available": true
+    },
+    {
+        "car_id": 4,
+        "brand": "Audi",
+        "model": "A6",
+        "year": 2023,
+        "price_per_day": 130,
+        "is_available": true
+    },
+    {
+        "car_id": 5,
+        "brand": "Hyundai",
+        "model": "Sonata",
+        "year": 2019,
+        "price_per_day": 40,
+        "is_available": true
+    },
+    {
+        "car_id": 6,
+        "brand": "Kia",
+        "model": "K5",
+        "year": 2022,
+        "price_per_day": 60,
+        "is_available": true
     }
 ]
