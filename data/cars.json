@@ -5,7 +5,7 @@
         "model": "Camry",
         "year": 2020,
         "price_per_day": 50,
-        "is_available": false
+        "is_available": true
     },
     {
         "car_id": 2,
@@ -13,6 +13,6 @@
         "model": "X5",
         "year": 2022,
         "price_per_day": 120,
-        "is_available": true
+        "is_available": false
     }
 ]

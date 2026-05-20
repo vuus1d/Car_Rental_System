@@ -71,20 +71,21 @@ class RentalManager:
 
     @log_action
     def return_car(self, car_id):
-        for booking in self.bookings:
 
-            if booking.car_id == car_id and booking.is_active:
+        for car in self.cars:
 
-                booking.complete()
+            if car.car_id == car_id:
 
-                for car in self.cars:
-                    if car.car_id == car_id:
-                        car.return_car()
+                if car.is_available:
+                    print("Car is already available")
+                    return
 
-                        print("Car returned successfully")
-                        return
+                car.return_car()
 
-        print("Active booking not found")
+                print("Car returned successfully")
+                return
+
+        print("Car not found")
     def show_statistics(self):
 
         total_cars = len(self.cars)
