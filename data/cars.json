@@ -45,6 +45,6 @@
         "model": "K5",
         "year": 2022,
         "price_per_day": 60,
-        "is_available": true
+        "is_available": false
     }
 ]
